@@ -19,6 +19,7 @@ namespace ProjetISF.Json
         public Client GetClient(int guid)
         {
             //TODO
+            return new Client();
         }
 
         public void UpdateClient(Client c)

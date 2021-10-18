@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ProjetISF.Database;
 
 namespace ProjetISF
 {
@@ -23,6 +24,8 @@ namespace ProjetISF
         public MainWindow()
         {
             InitializeComponent();
+            var c = new ClientDBAccess();
+            c.CreateDatabase();
         }
     }
 }
