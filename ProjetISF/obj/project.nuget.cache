@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "18YP5kynDB5wjBsKuIuRFoL3Krj4FvWbhEKsoze+FebyJIAcxneI4l3ybXfOPiVYCSrJ4MlazdfJvf58MpNlTw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jonat\\tp3cs\\ProjetISF\\ProjetISF\\ProjetISF.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jonat\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
