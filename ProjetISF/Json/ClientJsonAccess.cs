@@ -1,22 +1,24 @@
 ﻿
 
+using System.Collections.Generic;
 using ProjetISF.Person;
 
 namespace ProjetISF.Json
 {
     public class ClientJsonAccess : IClientDataAccess
     {
-        public void GetAll()
+        public List<Client> GetAll()
         {
             //TODO
+            return new List<Client>();
         }
 
-        public void CreateUser()
+        public void CreateUser(string firstname,string name, int pin, string currency, List<Money> money)
         {
             //ToDO
         }
 
-        public Client GetClient(int guid)
+        public Client GetClient(string guid)
         {
             //TODO
             return new Client();
@@ -27,7 +29,7 @@ namespace ProjetISF.Json
             //TODO
         }
 
-        public void DeleteClient(int guid)
+        public void DeleteClient(string guid)
         {
             //TODO
         }
