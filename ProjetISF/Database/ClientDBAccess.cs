@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Data;
 using ProjetISF.Person;
 using System.Data.SQLite;
+using System.IO;
 using System.Windows.Documents;
 
 namespace ProjetISF.Database
 {
     public class ClientDBAccess : IClientDataAccess
     {
-
         private string cs = @"URI=file:C:\Users\jonat\tp3cs\ProjetISF\ProjetISF\Database\ProjetISF";
+        //private string cs = @"URI=file:"+Directory.GetCurrentDirectory().Replace("bin\\Debug\\net5.0","")+"\\Database\\ProjetISF";
         public List<Client> GetAll()
         {
             List<Client> lc= new List<Client>();
