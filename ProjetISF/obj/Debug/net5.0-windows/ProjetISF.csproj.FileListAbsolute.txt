@@ -64,3 +64,7 @@ C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\Projet
 C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\ref\ProjetISF.dll
 C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\ProjetISF.pdb
 C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\ProjetISF.genruntimeconfig.cache
+C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\AdminWindow.g.cs
+C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\UserWindow.g.cs
+C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\AdminWindow.baml
+C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\UserWindow.baml

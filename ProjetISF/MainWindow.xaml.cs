@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ProjetISF.Database;
+using ProjetISF.Person;
 
 namespace ProjetISF
 {
@@ -25,9 +26,53 @@ namespace ProjetISF
         public MainWindow()
         {
             InitializeComponent();
-           /* var c = new ClientDBAccess();
+            /*var c = new ClientDBAccess();
             c.CreateDatabase();
             c.FillTables();*/
+        }
+
+        private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void ButtonQuit_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void ButtonLOGIN_OnClick(object sender, RoutedEventArgs e)
+        {
+            var c = new ClientDBAccess();
+           
+
+            if(ID.Text=="admin" && Password.Password=="admin")
+            {
+                AdminWindow adminWindow = new AdminWindow();
+                adminWindow.Show();
+                this.Hide();
+
+            }
+            else
+            {
+                Client cl = new Client();
+
+                cl = c.GetClient(ID.Text);
+                //test.Text = cl.guid + "--" + Password.Password;
+                if (cl.pin.ToString() == Password.Password)
+                {
+                    UserWindow userWindow = new UserWindow();
+                    userWindow.Show();
+                    this.Hide();
+
+                }
+                
+                
+            }
+            
         }
     }
 }

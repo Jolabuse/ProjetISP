@@ -4,14 +4,16 @@ using System.Data;
 using ProjetISF.Person;
 using System.Data.SQLite;
 using System.IO;
+using System.Windows;
 using System.Windows.Documents;
+using System.Xml;
 
 namespace ProjetISF.Database
 {
     public class ClientDBAccess : IClientDataAccess
     {
-        private string cs = @"URI=file:C:\Users\jonat\tp3cs\ProjetISF\ProjetISF\Database\ProjetISF";
-        //private string cs = @"URI=file:"+Directory.GetCurrentDirectory().Replace("bin\\Debug\\net5.0","")+"\\Database\\ProjetISF";
+        //private string cs = @"URI=file:C:\Users\jonat\tp3cs\ProjetISF\ProjetISF\Database\ProjetISF";
+        private string cs = @"URI=file:"+Directory.GetCurrentDirectory().Replace("bin\\Debug\\net5.0-windows","")+"\\Database\\ProjetISF";
         public List<Client> GetAll()
         {
             List<Client> lc= new List<Client>();
@@ -31,7 +33,7 @@ namespace ProjetISF.Database
                 c.name = rdr.GetString(2);
                 c.pin = rdr.GetInt32(3);
                 c.currency = rdr.GetString(4);
-                cmd.CommandText = "SELECT currency,value FROM Money WHERE id = @p";
+                cmd.CommandText = "SELECT currency,value_ FROM Money WHERE id = @p";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add(new SQLiteParameter("@p",c.guid));
                 using SQLiteDataReader rdr2 = cmd.ExecuteReader();
@@ -68,7 +70,7 @@ namespace ProjetISF.Database
             cmd.ExecuteNonQuery();
             foreach (var m in money)
             {
-                cmd.CommandText = "INSERT INTO Money(id,currency,value) "
+                cmd.CommandText = "INSERT INTO Money(id,currency,value_) "
                                   +"VALUES(@p1,@p2,@p3)";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
@@ -84,12 +86,14 @@ namespace ProjetISF.Database
             
             using var con = new SQLiteConnection(cs);
             con.Open();
-            string stm = "SELECT * FROM Client WHERE id = @p1";
+            string stm = "SELECT * FROM Client WHERE id =@p1";
             using var cmd = new SQLiteCommand(stm,con);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SQLiteParameter("@p1",guid));
             using SQLiteDataReader rdr = cmd.ExecuteReader();
             Money m;
+            MainWindow mw = (MainWindow) Application.Current.MainWindow;
+            
             
             if (rdr.Read())
             {
@@ -98,18 +102,20 @@ namespace ProjetISF.Database
                 c.name = rdr.GetString(2);
                 c.pin = rdr.GetInt32(3);
                 c.currency = rdr.GetString(4);
-                cmd.CommandText = "SELECT currency,value FROM Money WHERE id = @p";
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add(new SQLiteParameter("@p",c.guid));
-                using SQLiteDataReader rdr2 = cmd.ExecuteReader();
+                string stm2 = "SELECT currency,value_ FROM Money WHERE id = @p";
+                using var cmd2 = new SQLiteCommand(stm2,con);
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Parameters.Add(new SQLiteParameter("@p",c.guid));
+                using SQLiteDataReader rdr2 = cmd2.ExecuteReader();
+                mw.test.Text = rdr2.Read().ToString();
                 while (rdr2.Read())
                 {
-                    m = new Money();
-                    m.currency = rdr2.GetString(0);
-                    m.value = rdr2.GetInt32(1);
-                    c.money.Add(m);
+                     m = new Money();
+                     m.currency = rdr2.GetString(0);
+                     m.value = rdr2.GetInt32(1);
+                     c.money.Add(m);
                 }
-                
+
             }
             
             return c;
@@ -130,7 +136,7 @@ namespace ProjetISF.Database
             cmd.ExecuteNonQuery();
             foreach (var m in c.money)
             {
-                cmd.CommandText = "UPDATE TABLE Money SET value = @p1 WHERE id = @p2 AND currency = @p3";
+                cmd.CommandText = "UPDATE TABLE Money SET value_ = @p1 WHERE id = @p2 AND currency = @p3";
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.Add(new SQLiteParameter("@p1",m.value));
                 cmd.Parameters.Add(new SQLiteParameter("@p2",c.guid));
@@ -170,7 +176,7 @@ namespace ProjetISF.Database
             cmd.CommandText = "DROP TABLE IF EXISTS Money";
             cmd.ExecuteNonQuery();
             cmd.CommandText = "CREATE TABLE Money(id VARCHAR(40),"
-                              + "currency VARCHAR(20),value INTEGER,"+
+                              + "currency VARCHAR(20),value_ INTEGER,"+
                               "FOREIGN KEY (id) REFERENCES Client(id))";
             cmd.ExecuteNonQuery();
         }
@@ -189,19 +195,19 @@ namespace ProjetISF.Database
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
             cmd.ExecuteNonQuery();
             
-            cmd.CommandText = "INSERT INTO Money(id,currency,value) "
+            cmd.CommandText = "INSERT INTO Money(id,currency,value_) "
                               +"VALUES(@p1,'Euro',1100)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
             cmd.ExecuteNonQuery();
             
-            cmd.CommandText = "INSERT INTO Money(id,currency,value) "
+            cmd.CommandText = "INSERT INTO Money(id,currency,value_) "
                               +"VALUES(@p1,'Dollar',50)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
             cmd.ExecuteNonQuery();
             
-            cmd.CommandText = "INSERT INTO Money(id,currency,value) "
+            cmd.CommandText = "INSERT INTO Money(id,currency,value_) "
                               +"VALUES(@p1,'Yen',25000)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
@@ -217,19 +223,19 @@ namespace ProjetISF.Database
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
             cmd.ExecuteNonQuery();
             
-            cmd.CommandText = "INSERT INTO Money(id,currency,value) "
+            cmd.CommandText = "INSERT INTO Money(id,currency,value_) "
                               +"VALUES(@p1,'Euro',2100)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
             cmd.ExecuteNonQuery();
             
-            cmd.CommandText = "INSERT INTO Money(id,currency,value) "
+            cmd.CommandText = "INSERT INTO Money(id,currency,value_) "
                               +"VALUES(@p1,'Dollar',500)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
             cmd.ExecuteNonQuery();
             
-            cmd.CommandText = "INSERT INTO Money(id,currency,value) "
+            cmd.CommandText = "INSERT INTO Money(id,currency,value_) "
                               +"VALUES(@p1,'Yen',25)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
@@ -243,19 +249,19 @@ namespace ProjetISF.Database
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
             cmd.ExecuteNonQuery();
             
-            cmd.CommandText = "INSERT INTO Money(id,currency,value) "
+            cmd.CommandText = "INSERT INTO Money(id,currency,value_) "
                               +"VALUES(@p1,'Euro',300)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
             cmd.ExecuteNonQuery();
             
-            cmd.CommandText = "INSERT INTO Money(id,currency,value) "
+            cmd.CommandText = "INSERT INTO Money(id,currency,value_) "
                               +"VALUES(@p1,'Dollar',3500)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
             cmd.ExecuteNonQuery();
             
-            cmd.CommandText = "INSERT INTO Money(id,currency,value) "
+            cmd.CommandText = "INSERT INTO Money(id,currency,value_) "
                               +"VALUES(@p1,'Yen',200)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));

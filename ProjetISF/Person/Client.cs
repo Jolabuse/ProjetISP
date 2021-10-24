@@ -9,6 +9,6 @@ namespace ProjetISF.Person
         public string name{ get; set; }
         public int pin{ get; set; }
         public string currency{ get; set; }
-        public List<Money> money { get; set; }
+        public List<Money> money { get; set; } = new List<Money>();
     }
 }
