@@ -25,9 +25,9 @@ namespace ProjetISF
         public MainWindow()
         {
             InitializeComponent();
-            var c = new ClientDBAccess();
+           /* var c = new ClientDBAccess();
             c.CreateDatabase();
-            c.FillTables();
+            c.FillTables();*/
         }
     }
 }

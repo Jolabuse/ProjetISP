@@ -1,6 +1,4 @@
-﻿
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ProjetISF.Person;
 
 namespace ProjetISF.Json
