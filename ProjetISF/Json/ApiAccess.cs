@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using Newtonsoft.Json;
+using ProjetISF.Person;
 
 namespace ProjetISF.Json
 {
@@ -15,8 +17,6 @@ namespace ProjetISF.Json
         
         private static string apikey = "5cd953afba0a80987318d109";
         
-
-        
         public  async void Getchange(string currency1,string currency2,string amount)
         {
             objectRes = new Root();
@@ -28,7 +28,9 @@ namespace ProjetISF.Json
 
 
         }
-        static void test(string[] args)
+
+        
+            static void test(string[] args)
         {
             Console.WriteLine("Hello World!");
             

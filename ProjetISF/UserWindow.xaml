@@ -5,15 +5,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:ProjetISF"
         mc:Ignorable="d"
-        Title="UserWindow" Height="720" Width="1200"
+        Title="UserWindow" Height="680" Width="900"
         ResizeMode="NoResize">
     <StackPanel>
   
         
         <StackPanel>
-            <TextBlock Text="Bank ACCOUNT" Foreground="BLACK" FontSize="28" HorizontalAlignment="Left"  Margin="0,0,0,20"/>
+            <TextBlock Text="Bank ACCOUNT" Name="title" Foreground="BLACK" FontSize="28" HorizontalAlignment="Left"  Margin="45,0,0,20"/>
             <StackPanel Orientation="Horizontal">
-                <Border Width="400" Height="200" >
+                <Border Width="400" Height="270"  Margin="20,0,0,0" >
                     <Border.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                             <GradientStop Color="#743eb6" Offset="0.0"/>
@@ -21,21 +21,19 @@
                         </LinearGradientBrush>
                     </Border.Background>
                     <Border.Clip>
-                        <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,400,200"></RectangleGeometry>
+                        <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,400,270"></RectangleGeometry>
                     </Border.Clip>
                 
                     <Grid>
                         <StackPanel>
-                            <TextBlock  Name="name" Foreground="White" FontSize="28" Margin="20,10,10,0"/>
-                            <TextBlock Name="total" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
-                            <TextBlock Name="favcurrency" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
-                            <TextBlock Name="totalfavcurrency" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
+                            <TextBlock Name="total"  Text="test" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
+                            <TextBlock Name="favcurrency"  Text="test" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
+                            <TextBlock Name="totalfavcurrency"  Text="test" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
                         </StackPanel>
-                        <Image Width="250" Height="250"  Name="Image" />
                     </Grid>
                 </Border>
                 
-                <Border Width="200" Height="200"  CornerRadius="10" Margin="45,0,0,0">
+                <Border Width="400" Height="270"  CornerRadius="10" Margin="45,0,0,0">
                     <Border.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                             <GradientStop Color="#743eb6" Offset="0.0"/>
@@ -43,19 +41,19 @@
                         </LinearGradientBrush>
                     </Border.Background>
                     <Border.Clip>
-                        <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,400,200"></RectangleGeometry>
+                        <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,400,300"></RectangleGeometry>
                     </Border.Clip>
                 
                     <Grid>
                         <StackPanel>
                             <TextBlock Text="ChangePin" Foreground="White" FontSize="24" Margin="20,10,10,0"/>
-                            <TextBlock  FontSize="20" Margin="20,10,10,0"/>
-                            <TextBox Name="oldpin"  FontSize="20" Margin="20,10,10,0"/>
-                            <TextBlock   FontSize="20" Margin="20,10,10,0"/>
-                            <TextBox Name="newpin"  FontSize="20" Margin="20,10,10,0"/>
-                            <TextBlock  FontSize="20" Margin="20,10,10,0"/>
-                            <TextBox Name="newpinverif"  FontSize="20" Margin="20,10,10,0"/>
-                            <Button  Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
+                            <TextBlock  Text="oldpin" FontSize="20" Margin="20,0,0,0"/>
+                            <TextBox Name="oldpin"  FontSize="20" Margin="20,0,0,0"/>
+                            <TextBlock  Text="newpin" FontSize="20" Margin="20,0,0,0"/>
+                            <TextBox Name="newpin"  FontSize="20" Margin="20,0,0,0"/>
+                            <TextBlock Text="newpinverif" FontSize="20" Margin="20,0,0,0"/>
+                            <TextBox Name="newpinverif"  FontSize="20" Margin="20,0,0,0"/>
+                            <Button  Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand" Click="Buttonpin_OnClick"/>
 
                         </StackPanel>
                     </Grid>
@@ -71,7 +69,7 @@
                     <Setter Property="Margin" Value="15,0,0,0"/>
                 </Style>
             </StackPanel.Resources>
-            <Border Width="150" Height="150" CornerRadius="10" Margin="0">
+            <Border Width="200" Height="200" CornerRadius="10"  Margin="20,0,0,0">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="#743eb6" Offset="0.0"/>
@@ -81,15 +79,15 @@
                 <Grid>
                     <StackPanel>
                         <TextBlock Text="Add money" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
-                        <TextBox Name="addmoney" Foreground="White"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
-                        <Button  Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
+                        <TextBox Name="addmoney" Foreground="White"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center" />
+                        <Button Click="ButtonAdd_OnClick" Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
 
                  
                     </StackPanel>
                    
                 </Grid>
             </Border>
-            <Border Width="150" Height="150" CornerRadius="10">
+            <Border Width="200" Height="200" CornerRadius="10">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="#743eb6" Offset="0.0"/>
@@ -100,14 +98,14 @@
                     <StackPanel>
                         <TextBlock Text="Retrieve money" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
                         <TextBox Name="retrievemoney" Foreground="White"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
-                        <Button  Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
+                        <Button  Click="ButtonRemove_OnClick" Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
 
 
                     </StackPanel>
                    
                 </Grid>
             </Border>
-            <Border Width="150" Height="150" CornerRadius="10">
+            <Border Width="200" Height="200" CornerRadius="10">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="#743eb6" Offset="0.0"/>
@@ -117,17 +115,17 @@
                 <Grid>
                     <StackPanel>
                         <TextBlock Text="Money in" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
-                        <TextBox Name="moneyincurrecny" Foreground="White"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
+                        <TextBlock Text="testy" Name="moneyincurrecny" Foreground="White"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
                         <ComboBox>
-                            <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-                            <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
-                            <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+                            <ComboBoxItem>EUR</ComboBoxItem>
+                            <ComboBoxItem IsSelected="True">USD</ComboBoxItem>
+                            <ComboBoxItem>YEN</ComboBoxItem>
                         </ComboBox>
                     </StackPanel>
                    
                 </Grid>
             </Border>
-            <Border Width="150" Height="150" CornerRadius="10">
+            <Border Width="200" Height="200" CornerRadius="10">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
                         <GradientStop Color="#743eb6" Offset="0.0"/>
@@ -139,16 +137,16 @@
                         <TextBlock Text="switch in" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
                         <TextBox Name="switch" Foreground="White"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
                         <ComboBox>
-                            <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-                            <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
-                            <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+                            <ComboBoxItem>EUR</ComboBoxItem>
+                            <ComboBoxItem IsSelected="True">USD</ComboBoxItem>
+                            <ComboBoxItem>YEN</ComboBoxItem>
                         </ComboBox>
                         <ComboBox>
-                            <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-                            <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
-                            <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+                            <ComboBoxItem>EUR</ComboBoxItem>
+                            <ComboBoxItem IsSelected="True">USD</ComboBoxItem>
+                            <ComboBoxItem>YEN</ComboBoxItem>
                         </ComboBox>
-                        <Button  Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
+                        <Button  Click="ButtonConver_OnClick" Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
 
                     </StackPanel>
                    

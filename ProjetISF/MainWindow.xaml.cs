@@ -26,7 +26,7 @@ namespace ProjetISF
         public MainWindow()
         {
             InitializeComponent();
-            /*var c = new ClientDBAccess();
+           /*var c = new ClientDBAccess();
             c.CreateDatabase();
             c.FillTables();*/
         }
@@ -64,7 +64,7 @@ namespace ProjetISF
                 //test.Text = cl.guid + "--" + Password.Password;
                 if (cl.pin.ToString() == Password.Password)
                 {
-                    UserWindow userWindow = new UserWindow();
+                    UserWindow userWindow = new UserWindow(cl);
                     userWindow.Show();
                     this.Hide();
 
