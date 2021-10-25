@@ -116,10 +116,10 @@
                     <StackPanel>
                         <TextBlock Text="Money in" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
                         <TextBlock Text="testy" Name="moneyincurrecny" Foreground="White"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
-                        <ComboBox>
+                        <ComboBox SelectionChanged="Selector_OnSelectionChanged" Name="ComboBox">
                             <ComboBoxItem>EUR</ComboBoxItem>
                             <ComboBoxItem IsSelected="True">USD</ComboBoxItem>
-                            <ComboBoxItem>YEN</ComboBoxItem>
+                            <ComboBoxItem>JPY</ComboBoxItem>
                         </ComboBox>
                     </StackPanel>
                    
@@ -135,16 +135,16 @@
                 <Grid>
                     <StackPanel>
                         <TextBlock Text="switch in" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
-                        <TextBox Name="switch" Foreground="White"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
-                        <ComboBox>
+                        <TextBox Name="switch_" Foreground="White"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
+                        <ComboBox Name="from">
                             <ComboBoxItem>EUR</ComboBoxItem>
                             <ComboBoxItem IsSelected="True">USD</ComboBoxItem>
-                            <ComboBoxItem>YEN</ComboBoxItem>
+                            <ComboBoxItem>JPY</ComboBoxItem>
                         </ComboBox>
-                        <ComboBox>
+                        <ComboBox Name="to">
                             <ComboBoxItem>EUR</ComboBoxItem>
                             <ComboBoxItem IsSelected="True">USD</ComboBoxItem>
-                            <ComboBoxItem>YEN</ComboBoxItem>
+                            <ComboBoxItem>JPY</ComboBoxItem>
                         </ComboBox>
                         <Button  Click="ButtonConver_OnClick" Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
 

@@ -209,7 +209,7 @@ namespace ProjetISF.Database
             cmd.ExecuteNonQuery();
             
             cmd.CommandText = "INSERT INTO Money(id,currency,value_) "
-                              +"VALUES(@p1,'YEN',25000)";
+                              +"VALUES(@p1,'JPY',25000)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
             cmd.ExecuteNonQuery();
@@ -237,7 +237,7 @@ namespace ProjetISF.Database
             cmd.ExecuteNonQuery();
             
             cmd.CommandText = "INSERT INTO Money(id,currency,value_) "
-                              +"VALUES(@p1,'YEN',25)";
+                              +"VALUES(@p1,'JPY',25)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
             cmd.ExecuteNonQuery();
@@ -263,7 +263,7 @@ namespace ProjetISF.Database
             cmd.ExecuteNonQuery();
             
             cmd.CommandText = "INSERT INTO Money(id,currency,value_) "
-                              +"VALUES(@p1,'YEN',200)";
+                              +"VALUES(@p1,'JPY',200)";
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.Add(new SQLiteParameter("@p1",gs));
             cmd.ExecuteNonQuery();
