@@ -51,7 +51,7 @@ namespace ProjetISF.Database
             return lc;
         }
 
-        public void CreateUser(string firstname,string name, int pin, string currency, List<Money> money)
+        public void CreateUser(string firstname,string name, string pin, string currency, List<Money> money)
         {
             using var con = new SQLiteConnection(cs);
             con.Open();
