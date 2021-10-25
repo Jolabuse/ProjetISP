@@ -74,6 +74,7 @@ namespace ProjetISF.Json
         {
             ClientDBAccess cdb = new ClientDBAccess();
             var l = cdb.GetAll();
+            //var l = new List<Client>();
             var jss = JsonConvert.SerializeObject(l, Formatting.Indented);
             File.WriteAllText(filename,jss);
         }
