@@ -33,8 +33,8 @@ namespace ProjetISF.Database
                 c.name = rdr.GetString(2);
                 c.pin = rdr.GetString(3);
                 c.currency = rdr.GetString(4);
-                using var cmd2 = new SQLiteCommand(stm,con);
-                cmd2.CommandText = "SELECT currency,value_ FROM Money WHERE id = @p";
+                string stm2 = "SELECT currency,value_ FROM Money WHERE id = @p";
+                using var cmd2 = new SQLiteCommand(stm2,con);
                 cmd2.CommandType = CommandType.Text;
                 cmd2.Parameters.Add(new SQLiteParameter("@p",c.guid));
                 using SQLiteDataReader rdr2 = cmd2.ExecuteReader();
@@ -52,7 +52,7 @@ namespace ProjetISF.Database
             return lc;
         }
 
-        public void CreateUser(string firstname,string name, int pin, string currency, List<Money> money)
+        public void CreateUser(string firstname,string name, string pin, string currency, List<Money> money)
         {
             using var con = new SQLiteConnection(cs);
             con.Open();

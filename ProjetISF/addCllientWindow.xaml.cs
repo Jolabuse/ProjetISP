@@ -33,7 +33,7 @@ namespace ProjetISF
             m3.currency ="JPY";
             m3.value =10;
             money.Add(m3);
-            c.CreateUser(firstname.Text,name.Text,Int32.Parse(pin.Text),typeItem.Content.ToString(),money);
+            c.CreateUser(firstname.Text,name.Text,pin.Text,typeItem.Content.ToString(),money);
             Close();
 
         }

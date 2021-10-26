@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ProjetISF.Database;
+using ProjetISF.Json;
 using ProjetISF.Person;
 
 namespace ProjetISF
@@ -29,6 +30,8 @@ namespace ProjetISF
            /*var c = new ClientDBAccess();
             c.CreateDatabase();
             c.FillTables();*/
+            var c = new ClientJsonAccess();
+            c.FillJson();
         }
 
         private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)

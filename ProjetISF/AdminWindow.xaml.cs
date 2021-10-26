@@ -24,11 +24,18 @@ namespace ProjetISF
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            Client cl = new Client();
-            var c = new ClientDBAccess();
-            cl = c.GetClient(clientid.Text);
-            UserWindow userWindow = new UserWindow(cl);
-            userWindow.Show();
+            try
+            {
+                Client cl = new Client();
+                var c = new ClientDBAccess();
+                cl = c.GetClient(clientid.Text);
+                UserWindow userWindow = new UserWindow(cl);
+                userWindow.Show();
+            }
+            catch 
+            {
+                //
+            }
          
 
             
