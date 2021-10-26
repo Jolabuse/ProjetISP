@@ -1,0 +1,86 @@
+[
+  {
+    "guid": "5c409848-e7e7-4861-bcd3-ab147213d928",
+    "firstname": "Jonathan",
+    "name": "WITT",
+    "pin": "1010",
+    "currency": "EUR",
+    "money": [
+      {
+        "currency": "EUR",
+        "value": 1108.585
+      },
+      {
+        "currency": "USD",
+        "value": 30.0
+      },
+      {
+        "currency": "JPY",
+        "value": 26137.105
+      }
+    ]
+  },
+  {
+    "guid": "36d43c38-717b-486a-8d63-2a486ed3203d",
+    "firstname": "Adrien",
+    "name": "GIRARD",
+    "pin": "1234",
+    "currency": "EUR",
+    "money": [
+      {
+        "currency": "EUR",
+        "value": 2100.0
+      },
+      {
+        "currency": "USD",
+        "value": 500.0
+      },
+      {
+        "currency": "JPY",
+        "value": 25.0
+      }
+    ]
+  },
+  {
+    "guid": "3276e58a-4c49-4792-b920-3e014d2813ad",
+    "firstname": "Yann",
+    "name": "COURTEMANCHE",
+    "pin": "9999",
+    "currency": "USD",
+    "money": [
+      {
+        "currency": "EUR",
+        "value": 300.0
+      },
+      {
+        "currency": "USD",
+        "value": 3500.0
+      },
+      {
+        "currency": "JPY",
+        "value": 200.0
+      }
+    ]
+  },
+  {
+    "guid": "abc5180a-4c37-47e0-a11c-2368ff944616",
+    "firstname": "aa",
+    "name": "aaa",
+    "pin": "5",
+    "currency": "USD",
+    "money": [
+      {
+        "currency": "JPY",
+        "value": 10.0
+      },
+      {
+        "currency": "JPY",
+        "value": 10.0
+      },
+      {
+        "currency": "JPY",
+        "value": 10.0
+      }
+    ]
+  }
+]
