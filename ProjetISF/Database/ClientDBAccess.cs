@@ -33,10 +33,11 @@ namespace ProjetISF.Database
                 c.name = rdr.GetString(2);
                 c.pin = rdr.GetString(3);
                 c.currency = rdr.GetString(4);
-                cmd.CommandText = "SELECT currency,value_ FROM Money WHERE id = @p";
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add(new SQLiteParameter("@p",c.guid));
-                using SQLiteDataReader rdr2 = cmd.ExecuteReader();
+                using var cmd2 = new SQLiteCommand(stm,con);
+                cmd2.CommandText = "SELECT currency,value_ FROM Money WHERE id = @p";
+                cmd2.CommandType = CommandType.Text;
+                cmd2.Parameters.Add(new SQLiteParameter("@p",c.guid));
+                using SQLiteDataReader rdr2 = cmd2.ExecuteReader();
                 while (rdr2.Read())
                 {
                     m = new Money();

@@ -1,0 +1,47 @@
+﻿<Window x:Class="ProjetISF.AllClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:ProjetISF"
+        mc:Ignorable="d"
+        Title="AllClientWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid Name="Users" AutoGenerateColumns="False" CanUserAddRows="false" IsReadOnly="true">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="name" Binding="{Binding name}" />
+                <DataGridTextColumn Header="firstname" Binding="{Binding firstname}" />
+                <DataGridTextColumn Header="currency" Binding="{Binding currency}" />
+                <DataGridTextColumn Header="id" Binding="{Binding guid}" />
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnView" Content="Del" Click="BtnDel_OnClick" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Change Pin">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnView" Content="Change" Click="BtnChange_OnClick" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding money}" Margin="10" />
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        <Popup Margin="10,10,0,13" Name="Popup1" HorizontalAlignment="Left"   
+               VerticalAlignment="Top" Width="194" Height="200" IsOpen="False">
+            <StackPanel>
+                <TextBox Name="Box"/>
+                <Button Content="Change Pin" Click="ButtonBase_OnClick"/>
+            </StackPanel>  
+           
+           
+        </Popup>  
+    </Grid>
+</Window>

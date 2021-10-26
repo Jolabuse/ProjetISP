@@ -68,3 +68,7 @@ C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\AdminW
 C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\UserWindow.g.cs
 C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\AdminWindow.baml
 C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\UserWindow.baml
+C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\addCllientWindow.g.cs
+C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\AllClientWindow.g.cs
+C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\addCllientWindow.baml
+C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\AllClientWindow.baml

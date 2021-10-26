@@ -8,6 +8,11 @@
         Title="AdminWindow" Height="450" Width="800"
         ResizeMode="NoResize">
     <Grid>
-        
+        <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
+            <Button Width="100" Height="40" Content="Ajouter un client" Margin="60,0,60,0" Click="ButtonAdClient_OnClick" />
+            <Button Width="100" Height="40" Content="voir tout les clients" Click="ButtonSeeClient_OnClick" />
+            <TextBox Name="clientid"   FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
+            <Button Width="100" Height="40" Content="Acceder a la page d'un client" Click="ButtonBase_OnClick" />
+        </StackPanel>
     </Grid>
 </Window>
