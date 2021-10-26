@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "3R1ZvHdyU9dw/xU7Z9Jxc7sKyRJuk0DpTwD5HoE7A1Fo1JRjPh7wJLaHGHrfaiGTtUTyTHO7+3rnfks2EaByhg==",
+  "dgSpecHash": "ibyUw+oGSviHH91JwiC5VBBuNfmz3m8LxluRBQtcn/kwF9pDnBLAPs6lBijTBTnXBJit4mIKrh1gO71pfR6qEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jonat\\tp3cs\\ProjetISF\\ProjetISF\\ProjetISF.csproj",
+  "projectFilePath": "C:\\Users\\adrie\\RiderProjects\\ProjetISP\\ProjetISF\\ProjetISF.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\jonat\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\jonat\\.nuget\\packages\\sqlite\\3.13.0\\sqlite.3.13.0.nupkg.sha512",
-    "C:\\Users\\jonat\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.115\\stub.system.data.sqlite.core.netstandard.1.0.115.nupkg.sha512",
-    "C:\\Users\\jonat\\.nuget\\packages\\system.data.sqlite.core\\1.0.115\\system.data.sqlite.core.1.0.115.nupkg.sha512"
+    "C:\\Users\\adrie\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\adrie\\.nuget\\packages\\sqlite\\3.13.0\\sqlite.3.13.0.nupkg.sha512",
+    "C:\\Users\\adrie\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.115\\stub.system.data.sqlite.core.netstandard.1.0.115.nupkg.sha512",
+    "C:\\Users\\adrie\\.nuget\\packages\\system.data.sqlite.core\\1.0.115\\system.data.sqlite.core.1.0.115.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonat\\tp3cs\\ProjetISF\\ProjetISF\\ProjetISF.csproj": {}
+    "C:\\Users\\adrie\\RiderProjects\\ProjetISP\\ProjetISF\\ProjetISF.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonat\\tp3cs\\ProjetISF\\ProjetISF\\ProjetISF.csproj": {
+    "C:\\Users\\adrie\\RiderProjects\\ProjetISP\\ProjetISF\\ProjetISF.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonat\\tp3cs\\ProjetISF\\ProjetISF\\ProjetISF.csproj",
+        "projectUniqueName": "C:\\Users\\adrie\\RiderProjects\\ProjetISP\\ProjetISF\\ProjetISF.csproj",
         "projectName": "ProjetISF",
-        "projectPath": "C:\\Users\\jonat\\tp3cs\\ProjetISF\\ProjetISF\\ProjetISF.csproj",
-        "packagesPath": "C:\\Users\\jonat\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonat\\tp3cs\\ProjetISF\\ProjetISF\\obj\\",
+        "projectPath": "C:\\Users\\adrie\\RiderProjects\\ProjetISP\\ProjetISF\\ProjetISF.csproj",
+        "packagesPath": "C:\\Users\\adrie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\adrie\\RiderProjects\\ProjetISP\\ProjetISF\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jonat\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\adrie\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0-windows"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -69,7 +71,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
