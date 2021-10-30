@@ -8,7 +8,7 @@
     "money": [
       {
         "currency": "EUR",
-        "value": 350.0
+        "value": 300.0
       },
       {
         "currency": "USD",
@@ -24,16 +24,16 @@
     "guid": "d80a520e-7fc2-4845-b730-0311f0a9acdd",
     "firstname": "Adrien",
     "name": "GIRARD",
-    "pin": "",
+    "pin": "111",
     "currency": "EUR",
     "money": [
       {
         "currency": "EUR",
-        "value": 2250.0
+        "value": 2300.0
       },
       {
         "currency": "USD",
-        "value": 500.0
+        "value": 1500.0
       },
       {
         "currency": "JPY",
@@ -54,7 +54,7 @@
       },
       {
         "currency": "USD",
-        "value": 3500.0
+        "value": 2000.0
       },
       {
         "currency": "JPY",
@@ -63,10 +63,10 @@
     ]
   },
   {
-    "guid": "7379b15f-e839-4dfd-a6e8-a762e569588c",
-    "firstname": "aaaa",
-    "name": "aa",
-    "pin": "1111",
+    "guid": "09353367-bd51-4224-ac87-7279cdcdaade",
+    "firstname": "philipe",
+    "name": "michel",
+    "pin": "1414",
     "currency": "USD",
     "money": [
       {
