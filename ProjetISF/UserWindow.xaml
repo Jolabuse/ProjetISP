@@ -6,12 +6,20 @@
         xmlns:local="clr-namespace:ProjetISF"
         mc:Ignorable="d"
         Title="UserWindow" Height="680" Width="900"
-        ResizeMode="NoResize">
-    <StackPanel>
+        WindowStyle = "None"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="MainWindow_OnMouseDown">
+    <Border Background="#272537" CornerRadius="15">
+        
+    
+    <StackPanel >
   
         
         <StackPanel>
-            <TextBlock Text="Bank ACCOUNT" Name="title" Foreground="BLACK" FontSize="28" HorizontalAlignment="Left"  Margin="45,0,0,20"/>
+            <Button Grid.Column="1" Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment= "Top" Content="⨉" Click="ButtonQuit_OnClick" Cursor="Hand"/>
+            <TextBlock Text="Bank ACCOUNT" Name="title" Foreground="White" FontSize="28" HorizontalAlignment="Left"  Margin="45,0,0,20"/>
             <StackPanel Orientation="Horizontal">
                 <Border Width="400" Height="270"  Margin="20,0,0,0" >
                     <Border.Background>
@@ -61,7 +69,7 @@
             </StackPanel>
             
         </StackPanel>
-        <TextBlock Text="Action" Foreground="White" FontSize="28" HorizontalAlignment="Left"  Margin="0,0,0,20"/>
+        <TextBlock Text="Action" Foreground="White" FontSize="28" HorizontalAlignment="Left"  Margin="45,0,0,20"/>
 
         <StackPanel Orientation="Horizontal">
             <StackPanel.Resources>
@@ -78,8 +86,8 @@
                 </Border.Background>
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Add money" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
-                        <TextBox Name="addmoney" Foreground="White"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center" />
+                        <TextBlock Text="Add or Retrieve money" Foreground="White" FontSize="17" Margin="20,10,10,0"/>
+                        <TextBox Name="addmoney" Width="150"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center" />
                         <Button Click="ButtonAdd_OnClick" Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
 
                  
@@ -96,9 +104,11 @@
                 </Border.Background>
                 <Grid>
                     <StackPanel>
-                        <TextBlock Text="Retrieve money" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
-                        <TextBox Name="retrievemoney" Foreground="White"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
-                        <Button  Click="ButtonRemove_OnClick" Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
+                        <TextBlock Text="Send money" Foreground="White" FontSize="24" Margin="20,10,10,0"/>
+                        <TextBox Name="retrievemoney"  Width="150" FontSize="22" Margin="0,10,10,0" HorizontalAlignment="Center"/>
+                        <TextBlock Text="User id" Width="150" FontSize="22" Margin="0,10,10,0" HorizontalAlignment="Center"/>
+                        <TextBox Name="iduser"  Width="150" FontSize="22" Margin="0,10,10,0" HorizontalAlignment="Center"/>
+                        <Button Click="ButtonSend_OnClick" Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
 
 
                     </StackPanel>
@@ -135,7 +145,7 @@
                 <Grid>
                     <StackPanel>
                         <TextBlock Text="switch in" Foreground="White" FontSize="20" Margin="20,10,10,0"/>
-                        <TextBox Name="switch_" Foreground="White"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
+                        <TextBox Name="switch_" FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
                         <ComboBox Name="from">
                             <ComboBoxItem>EUR</ComboBoxItem>
                             <ComboBoxItem IsSelected="True">USD</ComboBoxItem>
@@ -146,7 +156,7 @@
                             <ComboBoxItem IsSelected="True">USD</ComboBoxItem>
                             <ComboBoxItem>JPY</ComboBoxItem>
                         </ComboBox>
-                        <Button  Click="ButtonConver_OnClick" Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
+                        <Button Click="ButtonConver_OnClick" Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
 
                     </StackPanel>
                    
@@ -157,4 +167,5 @@
               
         </StackPanel>
     </StackPanel>
+    </Border>
 </Window>

@@ -5,14 +5,40 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:ProjetISF"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="450" Width="800"
-        ResizeMode="NoResize">
+        Title="AdminWindows" Height="450" Width="380"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize"
+        MouseDown="MainWindow_OnMouseDown">
     <Grid>
-        <StackPanel Orientation="Horizontal" Margin="0,50,0,0">
-            <Button Width="100" Height="40" Content="Ajouter un client" Margin="60,0,60,0" Click="ButtonAdClient_OnClick" />
-            <Button Width="100" Height="40" Content="voir tout les clients" Click="ButtonSeeClient_OnClick" />
-            <TextBox Name="clientid"   FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
-            <Button Width="100" Height="40" Content="Acceder a la page d'un client" Click="ButtonBase_OnClick" />
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="10" Grid.RowSpan="2">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="LightGray" Offset="0.0"/>
+                    <GradientStop Color="Gray" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+
+
+        <StackPanel  VerticalAlignment="Center">
+            <TextBlock Text="ADMIN accout"
+                       FontWeight="Light"
+                       FontFamily="helvetica"
+                       FontSize="22"
+                       Foreground="White"
+                       Name="test"
+                       HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical"  Margin="0,50,0,0">
+            <Button Style="{StaticResource specificButton}" Cursor="Hand" Margin="0,5,0,0"  Width="100" Height="40" Content="Ajouter un client" Click="ButtonAdClient_OnClick" />
+            <Button Style="{StaticResource specificButton}" Cursor="Hand" Margin="0,5,0,0"  Width="100" Height="40" Content="voir tout les clients" Click="ButtonSeeClient_OnClick" />
+            <Button Style="{StaticResource specificButton}" Cursor="Hand" Margin="0,5,0,0"  Width="100" Height="40" Content="Quit" Click="ButtonQuit_OnClick"/>
+
         </StackPanel>
     </Grid>
 </Window>

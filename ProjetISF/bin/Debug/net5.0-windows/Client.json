@@ -3,12 +3,12 @@
     "guid": "644c3a6d-9733-45d3-b426-f117f3dbebe7",
     "firstname": "Jonathan",
     "name": "WITT",
-    "pin": "1111",
+    "pin": "111",
     "currency": "EUR",
     "money": [
       {
         "currency": "EUR",
-        "value": 1100.0
+        "value": 350.0
       },
       {
         "currency": "USD",
@@ -24,12 +24,12 @@
     "guid": "d80a520e-7fc2-4845-b730-0311f0a9acdd",
     "firstname": "Adrien",
     "name": "GIRARD",
-    "pin": "1234",
+    "pin": "",
     "currency": "EUR",
     "money": [
       {
         "currency": "EUR",
-        "value": 2100.0
+        "value": 2250.0
       },
       {
         "currency": "USD",
@@ -59,6 +59,27 @@
       {
         "currency": "JPY",
         "value": 200.0
+      }
+    ]
+  },
+  {
+    "guid": "7379b15f-e839-4dfd-a6e8-a762e569588c",
+    "firstname": "aaaa",
+    "name": "aa",
+    "pin": "1111",
+    "currency": "USD",
+    "money": [
+      {
+        "currency": "EUR",
+        "value": 10.0
+      },
+      {
+        "currency": "USD",
+        "value": 10.0
+      },
+      {
+        "currency": "JPY",
+        "value": 10.0
       }
     ]
   }

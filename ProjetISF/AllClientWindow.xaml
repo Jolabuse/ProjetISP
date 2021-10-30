@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AllClientWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid Name="Users" AutoGenerateColumns="False" CanUserAddRows="false" IsReadOnly="true">
+        <DataGrid Margin="0,30,0,0" Name="Users" AutoGenerateColumns="False" CanUserAddRows="false" IsReadOnly="true">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="name" Binding="{Binding name}" />
                 <DataGridTextColumn Header="firstname" Binding="{Binding firstname}" />
@@ -27,21 +27,24 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="GO to page">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnView" Content="GO" Click="Gotoclient" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
-            <DataGrid.RowDetailsTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding money}" Margin="10" />
-                </DataTemplate>
-            </DataGrid.RowDetailsTemplate>
         </DataGrid>
+        <TextBox x:Name="textBox1" Height="22" VerticalAlignment="Top" KeyUp="textBox1_KeyUp" />
+
         <Popup Margin="10,10,0,13" Name="Popup1" HorizontalAlignment="Left"   
                VerticalAlignment="Top" Width="194" Height="200" IsOpen="False">
+            
             <StackPanel>
                 <TextBox Name="Box"/>
-                <Button Content="Change Pin" Click="ButtonBase_OnClick"/>
+                <Button  Content="Change Pin" Click="ButtonBase_OnClick"  />
             </StackPanel>  
-           
-           
         </Popup>  
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 using ProjetISF.Database;
 using ProjetISF.Person;
 
@@ -10,7 +11,13 @@ namespace ProjetISF
         {
             InitializeComponent();
         }
-
+        private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
         private void ButtonAdClient_OnClick(object sender, RoutedEventArgs e)
         {
             addCllientWindow addCllientWindow = new addCllientWindow();
@@ -22,23 +29,9 @@ namespace ProjetISF
             AllClientWindow.Show();
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonQuit_OnClick(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                Client cl = new Client();
-                var c = new ClientDBAccess();
-                cl = c.GetClient(clientid.Text);
-                UserWindow userWindow = new UserWindow(cl);
-                userWindow.Show();
-            }
-            catch 
-            {
-                //
-            }
-         
-
-            
+            Close();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using ProjetISF.Database;
 using ProjetISF.Json;
 using ProjetISF.Person;
@@ -25,10 +26,22 @@ namespace ProjetISF
             string value = typeItem.Content.ToString();
             int ii = Findfavcurinmoney(cl.money, value);
             moneyincurrecny.Text =cl.money[ii].value.ToString();
+            
 
 
         }
+        private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
 
+        private void ButtonQuit_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
         private void Buttonpin_OnClick(object sender, RoutedEventArgs e)
         {
             if (newpin.Text == newpinverif.Text && oldpin.Text == cl.pin.ToString())
@@ -89,14 +102,17 @@ namespace ProjetISF
             
 
         }  
-        private void ButtonRemove_OnClick(object sender, RoutedEventArgs e)
+        private void ButtonSend_OnClick(object sender, RoutedEventArgs e)
         {
             try
             {
-                int i = Findfavcurinmoney(cl.money, cl.currency);
-                cl.money[i].value -= Double.Parse(retrievemoney.Text);
                 var c = new ClientDBAccess();
+                Client use = c.GetClient(iduser.Text);
+                int i = Findfavcurinmoney(cl.money, cl.currency);
+                use.money[i].value += Double.Parse(retrievemoney.Text);
+                cl.money[i].value -= Double.Parse(retrievemoney.Text);
                 c.UpdateClient(cl);
+                c.UpdateClient(use);
                 Hide();
                 UserWindow userWindow = new UserWindow(cl);
                 userWindow.Show();

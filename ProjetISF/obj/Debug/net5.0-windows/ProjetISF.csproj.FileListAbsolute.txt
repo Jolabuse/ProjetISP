@@ -72,3 +72,5 @@ C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\addCll
 C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\AllClientWindow.g.cs
 C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\addCllientWindow.baml
 C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\AllClientWindow.baml
+C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\buttonTheme.baml
+C:\Users\adrie\RiderProjects\ProjetISP\ProjetISF\obj\Debug\net5.0-windows\App.baml

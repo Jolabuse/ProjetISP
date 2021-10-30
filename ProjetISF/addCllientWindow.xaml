@@ -5,19 +5,47 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:ProjetISF"
         mc:Ignorable="d"
-        Title="addCllientWindow" Height="450" Width="800">
+        Title="addCllientWindow" Height="450" Width="380"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStyle="None" ResizeMode="NoResize"
+        MouseDown="MainWindow_OnMouseDown">
     <Grid>
-        <StackPanel>
-            <TextBox Name="name" Foreground="White"  Width="20" Height="20"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
-            <TextBox Name="firstname"  Width="20" Height="20"   Foreground="White"  FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
-            <TextBox Name="pin" Foreground="White"   Width="20" Height="20"   FontSize="22" Margin="0,30,10,0" HorizontalAlignment="Center"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border CornerRadius="10" Grid.RowSpan="2">
+            <Border.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="LightGray" Offset="0.0"/>
+                    <GradientStop Color="Gray" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        <StackPanel  VerticalAlignment="Center">
+            <TextBlock Text="ADD USER"
+                       FontWeight="Light"
+                       FontFamily="helvetica"
+                       FontSize="22"
+                       Foreground="White"
+                       Name="test"
+                       HorizontalAlignment="Center"/>
+        </StackPanel >
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,-70,0,0">
+            <TextBlock Text="name"   FontSize="22"  />
+            <TextBox Name="name"   FontSize="22"  />
+            <TextBlock Text="firstname"   FontSize="22" />
+            <TextBox Name="firstname"   FontSize="22"  />
+            <TextBlock Text="pin"   FontSize="22"  />
+            <TextBox Name="pin" FontSize="22" />
 
-            <ComboBox Name="currency"  Width="20" Height="20"  >
+            <ComboBox Name="currency"    >
                 <ComboBoxItem>EUR</ComboBoxItem>
                 <ComboBoxItem IsSelected="True">USD</ComboBoxItem>
                 <ComboBoxItem>JPY</ComboBoxItem>
             </ComboBox>
-            <Button  Click="ButtonBase_OnClick" Width="20" Height="20" Background="Transparent" BorderThickness="0" Foreground="Gray" FontWeight="Bold" Margin="-5,5,5,5" Content="GO"  Cursor="Hand"/>
+            <Button  Style="{StaticResource specificButton}" Click="ButtonBase_OnClick" Width="100" Height="40" Content="Add Client"  Cursor="Hand"/>
+            <Button Style="{StaticResource specificButton}" Margin="0,5,0,0"  Width="100" Height="40" Content="Quit" Cursor="Hand" Click="ButtonQuit_OnClick"/>
 
         </StackPanel>
        

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using ProjetISF.Database;
@@ -11,15 +12,21 @@ namespace ProjetISF
     public partial class AllClientWindow : Window
     {
         private Client user;
+        private List<Client> clients = new List<Client>();
+
         public AllClientWindow()
         {
             InitializeComponent();
             var c = new ClientDBAccess();
-            List<Client> clients = new List<Client>();
             clients = c.GetAll();
             Users.ItemsSource = clients;
         }
+        private void textBox1_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            var filtered = clients.Where(client => client.name.ToUpper().StartsWith(textBox1.Text.ToUpper()));
 
+            Users.ItemsSource = filtered;            
+        }
         private void BtnDel_OnClick(object sender, RoutedEventArgs e)
         {
                 var c = new ClientDBAccess();
@@ -37,6 +44,23 @@ namespace ProjetISF
 
             
 
+        }
+        private void Gotoclient(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var c = new ClientDBAccess();
+                Client dataRowView = (Client)((Button)e.Source).DataContext;
+                Client cl = c.GetClient(dataRowView.guid);
+
+                UserWindow userWindow = new UserWindow(cl);
+                userWindow.Show();
+            }
+            catch 
+            {
+                //
+            }
+            
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)

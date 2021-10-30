@@ -61,16 +61,23 @@ namespace ProjetISF
             }
             else
             {
-                Client cl = new Client();
-
-                cl = c.GetClient(ID.Text);
-                //test.Text = cl.guid + "--" + Password.Password;
-                if (cl.pin.ToString() == Password.Password)
+                try
                 {
-                    UserWindow userWindow = new UserWindow(cl);
-                    userWindow.Show();
-                    this.Hide();
+                    Client cl = new Client();
 
+                    cl = c.GetClient(ID.Text);
+                    //test.Text = cl.guid + "--" + Password.Password;
+                    if (cl.pin.ToString() == Password.Password)
+                    {
+                        UserWindow userWindow = new UserWindow(cl);
+                        userWindow.Show();
+                        this.Hide();
+
+                    }
+                }
+                catch
+                {
+                    //
                 }
                 
                 

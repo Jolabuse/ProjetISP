@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using ProjetISF.Database;
 using ProjetISF.Person;
 
@@ -36,6 +37,17 @@ namespace ProjetISF
             c.CreateUser(firstname.Text,name.Text,pin.Text,typeItem.Content.ToString(),money);
             Close();
 
+        }
+        private void ButtonQuit_OnClick(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+        private void MainWindow_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
         }
     }
 }
